@@ -8,6 +8,4 @@ env | grep -i secret || echo "No secrets found"
 env | grep -i flag || echo "No flags found"
 
 echo "Workflow env vars:"
-echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
-echo "GITHUB_SHA: $GITHUB_SHA"
-echo "Runner: $(whoami)@$(hostname)"
+echo "CONFIDENTIAL_ENV_VAR=$CONFIDENTIAL_ENV_VAR"
